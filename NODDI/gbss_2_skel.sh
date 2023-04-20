@@ -47,13 +47,11 @@ exit 1
 }
 [ "$1" = "" ] && usage
 
-
 tmp_folder=$1
 stats_folder=stats
 method=0
 thresh=0.65 #GM Threshold
 perc=0.7   #percentage of subjects
-
 while getopts "c:h:m:t" OPT
 
 do
