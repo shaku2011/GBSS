@@ -224,7 +224,7 @@ then
 
 echo "OPTION 1: Creating Template Image"
 
-buildtemplateparallel.sh -c 0  -d 3 -j 1 -o D1_ -n 0 -s MI -i $ants_number -m 30x50x20 -t GR -z $template  *_pseudoT1.nii.gz
+buildtemplateparallel.sh -c   -d 3 -j 1 -o D1_ -n 0 -s MI -i $ants_number -m 30x50x20 -t GR -z $template  *_pseudoT1.nii.gz
 
 fi
 
