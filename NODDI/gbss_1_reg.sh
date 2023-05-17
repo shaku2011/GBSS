@@ -54,7 +54,7 @@ exit 1
 
 
 #Setting Defaults
-export PATH=$PATH:${SCRATCH}/HCP_project/ANTS
+# export PATH=$PATH:${SCRATCH}/HCP_project/ANTS
 method=1;
 template="${FSLDIR}/data/standard/MNI152_T1_1mm.nii.gz"
 atropos_method=1;
