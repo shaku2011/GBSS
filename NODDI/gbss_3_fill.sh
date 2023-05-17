@@ -69,5 +69,5 @@ fslmaths bin_mean_ODI.nii.gz -thr 0.995 mask_ODI
 
 
 #randomise script changed a little
-randomise -i all_fIC_filled.nii.gz -o gbss_fic -m mask.nii.gz -d plus.mat -t plus.con -n 10000 --T2 -V -x --uncorrp -R
-randomise -i all_ODI_filled.nii.gz -o gbss_ODI -m mask_ODI.nii.gz -d plus.mat -t plus.con -n 10000 --T2 -V -x --uncorrp -R
+#randomise -i all_fIC_filled.nii.gz -o gbss_fic -m mask.nii.gz -d plus.mat -t plus.con -n 10000 --T2 -V -x --uncorrp -R
+#randomise -i all_ODI_filled.nii.gz -o gbss_ODI -m mask_ODI.nii.gz -d plus.mat -t plus.con -n 10000 --T2 -V -x --uncorrp -R
