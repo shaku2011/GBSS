@@ -47,7 +47,7 @@ exit 1
 }
 [ "$1" = "" ] && usage
 
-tmp_folder=$1
+tmp_folder=tmpspace
 stats_folder=stats
 method=0
 thresh=0.65 #GM Threshold
@@ -105,7 +105,7 @@ done
 mkdir $stats_folder
 cd $stats_folder
 
-fslmerge -t all_GM ${tmp_folder}/*GM*
+fslmerge -t all_GM ../${tmp_folder}/*GM*
 fslmaths all_GM -thr $thresh -bin -Tmean mean_GM
 fslmaths mean_GM -thr 0.2 -bin GM_mask
 tbss_skeleton -i mean_GM.nii.gz -o GM_skel
@@ -121,10 +121,10 @@ tbss_skeleton -i mean_GM -p ${thresh} GM_mean_skeleton_mask_dst zero all_GM all_
 fslmaths all_GM_skeletonise.nii.gz -thr ${thresh} -bin -Tmean -thr $perc -bin mean_GM_skeleton_mask_general
 
 
-fslmerge -t all_ODI ${out_dir}/${tmp_folder}/*ODI*
-fslmerge -t all_fIC ${out_dir}/${tmp_folder}/*fIC*
-fslmerge -t all_WM ${out_dir}/${tmp_folder}/*WM*
-fslmerge -t all_CSF ${out_dir}/${tmp_folder}/*CSF*
+fslmerge -t all_ODI ../${tmp_folder}/*ODI*
+fslmerge -t all_fIC ../${tmp_folder}/*fIC*
+fslmerge -t all_WM ../${tmp_folder}/*WM*
+fslmerge -t all_CSF ../${tmp_folder}/*CSF*
 
 tbss_skeleton -i mean_GM -p $thresh GM_mean_skeleton_mask_dst zero all_GM all_ODI_skeletonised -a all_ODI
 tbss_skeleton -i mean_GM -p $thresh GM_mean_skeleton_mask_dst zero all_GM all_fIC_skeletonised -a all_fIC
