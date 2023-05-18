@@ -224,7 +224,8 @@ then
 
 echo "OPTION 1: Creating Template Image"
 
-buildtemplateparallel.sh -c 5 -d 3 -j 1 -o D1_ -n 0 -s MI -i $ants_number -m 30x50x20 -t GR -z $template  *_pseudoT1.nii.gz
+#TODO buildtemplateparallel.sh should use srun instead of sbatch, but maybe sbatch is better...?
+${GIT_FOLDER}/statistics/NoddiGBSS/bin/buildtemplateparallel.sh -c 5  -d 3 -j 1 -o D1_ -n 0 -s MI -i $ants_number -m 30x50x20 -t GR -z $template  *_pseudoT1.nii.gz
 
 fi
 
